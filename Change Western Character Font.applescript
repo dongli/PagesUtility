@@ -9,10 +9,10 @@ tell application "Pages"
         if document body is false then error number -1
         tell current page
             tell body text
-                repeat with myWord in words
-                    set code to ((id of (myWord as string)) as string) as integer
+                repeat with char in characters
+                    set code to ((id of (char as string)) as string) as integer
                     if code < cjkUnifiedIdeographsStart or code > cjkUnifiedIdeographsEnd then
-                        set font of myWord to fontName
+                        set font of char to fontName
                     end if
                 end repeat
             end tell
