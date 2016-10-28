@@ -5,9 +5,8 @@ for app in 'Pages'; do
   test -d "$scripts_directory/$app" || mkdir "$scripts_directory/$app"
 done
 
-# Copy AppleScripts to user's HOME scripts directory.
-function copy {
-  echo "[Notice]: Copy $1 to $2."
-}
+# Compile AppleScripts.
+osacompile -o ./Change\ Western\ Character\ Font.scpt ./Change\ Western\ Character\ Font.applescript
 
-copy './Change\ Western\ Character\ Font.scpt' "$scripts_directory/Pages"
+# Copy AppleScripts to user's HOME scripts directory.
+cp ./Change\ Western\ Character\ Font.scpt "$scripts_directory/Pages"
